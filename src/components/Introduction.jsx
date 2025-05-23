@@ -2,62 +2,87 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Introduction = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100
+      }
+    }
+  };
+
   return (
-    <div className=" bg-[#1a1a1a] py-16 px-4 md:px-16">
+    <div className="bg-[#1a1a1a] py-16 px-4 md:px-16">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row gap-8">
-          {/* Left Content */}
+          {/* Left Side - Content */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             className="w-full md:w-1/2"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
           >
-            <h2 className="text-white text-4xl md:text-5xl font-bold mb-6 relative">
-              Introduction
-              <span className="block w-24 h-1 bg-white mt-4"></span>
-            </h2>
+            <motion.h2 
+              className="text-white text-3xl md:text-4xl font-bold mb-6"
+              variants={itemVariants}
+            >
+              Professional Background
+            </motion.h2>
             
-            <p className="text-gray-300 mb-12">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-              non proident, sunt in culpa qui officia deserunt.
-            </p>
+            <motion.p 
+              className="text-gray-300 mb-8"
+              variants={itemVariants}
+            >
+              With over seven years of experience in quality control and analytical testing, I've developed expertise in pharmaceutical settings, focusing on maintaining stringent quality standards through both wet chemistry and instrumental methods.
+            </motion.p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-white text-xl font-semibold mb-4">About Me</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <motion.div 
+                className="bg-[#252525] p-6 rounded-lg"
+                variants={itemVariants}
+              >
+                <h3 className="text-white text-xl font-bold mb-3">About Me</h3>
                 <p className="text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                  Currently working as a Quality Control Assistant at Berger Jenson and Nicholson (Nepal) Pvt. Ltd., where I've trained over 75 workers, collaborated with production teams, and maintained strict compliance with GLP and cGMP standards.
                 </p>
-              </div>
+              </motion.div>
               
-              <div>
-                <h3 className="text-white text-xl font-semibold mb-4">About Portfolio</h3>
+              <motion.div 
+                className="bg-[#252525] p-6 rounded-lg"
+                variants={itemVariants}
+              >
+                <h3 className="text-white text-xl font-bold mb-3">Education</h3>
                 <p className="text-gray-300">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                  Bachelor of Science in Chemistry from Tribhuvan University (2013-2017), with focus on Thermodynamics, Spectroscopy, Refining & purification, Qualitative and quantitative analysis. Intermediate (+2) from HSEB Board (2010-2012).
                 </p>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
           
-          {/* Right Image */}
+          {/* Right Side - Image */}
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="w-full md:w-1/2 h-[400px] md:h-auto"
+            className="w-full md:w-1/2 flex items-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
           >
             <img 
-              src="https://www.shutterstock.com/image-photo/laboratory-glassware-over-black-background-600nw-66044017.jpg" 
-              alt="Corridor" 
-              className="w-full h-full object-cover "
+              src="https://t4.ftcdn.net/jpg/14/34/10/91/360_F_1434109167_YZU0LngAg7zKtaEgE0BBTnRzSShV52Qm.jpg" 
+              alt="Laboratory Equipment" 
+              className="w-full h-auto object-cover rounded-lg grayscale"
             />
           </motion.div>
         </div>

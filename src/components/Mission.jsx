@@ -68,7 +68,7 @@ const Mission = () => {
                 </div>
                 <div>
                   <p className="text-gray-300">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                    To maintain the highest standards of quality control in all testing procedures, ensuring that every product meets or exceeds industry standards and customer expectations.
                   </p>
                 </div>
               </motion.div>
@@ -79,7 +79,7 @@ const Mission = () => {
                 </div>
                 <div>
                   <p className="text-gray-300">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                    To continuously improve laboratory processes and testing methodologies, reducing testing time while maintaining accuracy and reliability in all quality assessments.
                   </p>
                 </div>
               </motion.div>
@@ -90,7 +90,7 @@ const Mission = () => {
                 </div>
                 <div>
                   <p className="text-gray-300">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                    To mentor and train colleagues in quality control procedures, fostering a culture of excellence and continuous learning within the laboratory environment.
                   </p>
                 </div>
               </motion.div>
@@ -101,7 +101,7 @@ const Mission = () => {
                 </div>
                 <div className="relative">
                   <p className="text-gray-300 border-l-4 border-purple-500 pl-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                    To contribute to the development of innovative paint products that combine performance, sustainability, and aesthetic appeal, meeting both market demands and regulatory requirements.
                   </p>
                 </div>
               </motion.div>
@@ -118,7 +118,7 @@ const Mission = () => {
             <motion.div 
               variants={imageVariants} 
               whileHover="hover"
-              className="h-full"
+              className="aspect-square overflow-hidden"
             >
               <img 
                 src="https://images.unsplash.com/photo-1517230878791-4d28214057c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" 
@@ -129,7 +129,7 @@ const Mission = () => {
             <motion.div 
               variants={imageVariants} 
               whileHover="hover"
-              className="h-full"
+              className="aspect-square overflow-hidden"
             >
               <img 
                 src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1026&q=80" 
@@ -140,7 +140,7 @@ const Mission = () => {
             <motion.div 
               variants={imageVariants} 
               whileHover="hover"
-              className="h-full"
+              className="aspect-square overflow-hidden"
             >
               <img 
                 src="https://cdn.shopify.com/s/files/1/2776/7900/files/image1_4715dd19-23a6-4cbb-be9e-cf09ceb5226d_1024x1024.jpg?v=1620291285" 
@@ -151,7 +151,7 @@ const Mission = () => {
             <motion.div 
               variants={imageVariants} 
               whileHover="hover"
-              className="h-full"
+              className="aspect-square overflow-hidden"
             >
               <img 
                 src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 

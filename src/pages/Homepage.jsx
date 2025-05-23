@@ -4,6 +4,7 @@ import Introduction from "../components/Introduction";
 import AboutMe from "../components/AboutMe";
 import Vision from "../components/Vision";
 import Mission from "../components/Mission";
+import Contact from "../components/Contact";
 
 const Homepage = () => {
   return (
@@ -13,6 +14,7 @@ const Homepage = () => {
       <AboutMe />
       <Vision />
       <Mission />
+      <Contact />
     </>
   );
 };

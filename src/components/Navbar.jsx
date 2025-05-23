@@ -28,7 +28,7 @@ const Navbar = () => {
       className="w-screen flex justify-between items-center py-4 md:py-8 px-6 md:px-18 fixed top-0 z-50 bg-[#2d2d2d] border-t-2 border-purple-500"
     >
       <Link to="/" className="text-white text-xl font-['Playfair_Display'] font-medium">
-        Talitha Harry
+        Udip Jasraj
       </Link>
 
       {/* Desktop Menu */}

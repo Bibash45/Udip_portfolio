@@ -71,44 +71,35 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="w-full md:w-1/2 flex flex-col justify-center px-4 md:px-16 py-8 md:py-0"
         >
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-white text-4xl md:text-7xl font-bold mb-4"
-          >
-            My
-            <br />
-            Portfolio
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-gray-400 text-sm md:text-base mb-6 md:mb-8"
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-col md:flex-row gap-3 md:gap-6"
-          >
-            <button className="bg-white text-black px-6 py-2 font-medium hover:bg-purple-400 transition-colors">
-              Explore Now
-            </button>
-            <button className="flex items-center justify-center gap-2 text-white">
-              <div className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center">
-                ▶
-              </div>
-              <span>Play Video</span>
-            </button>
-          </motion.div>
+             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+              Udip Kumar Jasraj
+            </h1>
+            <h2 className="text-xl md:text-2xl text-purple-400 mb-6">
+              Quality Control Professional
+            </h2>
+            <p className="text-gray-300 mb-8">
+              Ambitious Quality Control professional with over seven years of hands-on experience in quality control and analytical testing in pharmaceutical settings. Skilled in executing both wet chemistry and instrumental methods to uphold stringent quality standards. Eager to contribute to a collaborative laboratory environment while optimizing testing processes and mentoring new personnel.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <motion.button 
+                className="px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Explore Now
+              </motion.button>
+              <motion.button 
+                className="px-6 py-3 border border-purple-600 text-white rounded-full hover:bg-purple-600/20 transition-all duration-300 flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                </svg>
+                Play Video
+              </motion.button>
+            </div>
+        
         </motion.div>
       </div>
     </div>

@@ -73,9 +73,7 @@ const Vision = () => {
                 </div>
                 <div>
                   <p className="text-gray-300">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+                    Paints Product Development: Passionate about developing innovative, high-quality paint products that meet market and regulatory standards. Committed to creating solutions that combine performance, sustainability, and aesthetic appeal.
                   </p>
                 </div>
               </motion.div>
@@ -86,9 +84,7 @@ const Vision = () => {
                 </div>
                 <div>
                   <p className="text-gray-300">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+                    Quality Assurance Technology: Exploring advancements in technology to improve quality assurance processes and enhance product safety and efficacy. Dedicated to implementing innovative testing methods and digital solutions for more efficient quality control.
                   </p>
                 </div>
               </motion.div>
