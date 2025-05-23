@@ -7,19 +7,22 @@ const AboutMe = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.15,
+        delayChildren: 0.2
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 100
+        stiffness: 80,
+        damping: 12,
+        mass: 0.8
       }
     }
   };
@@ -31,73 +34,74 @@ const AboutMe = () => {
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 100
+        stiffness: 80,
+        damping: 14
       }
     },
     hover: {
       scale: 1.05,
+      y: -10,
       transition: {
-        duration: 0.3
+        duration: 0.4,
+        ease: "easeOut"
       }
     }
   };
 
   return (
-    <div className="bg-[#1a1a1a] py-16 px-4 md:px-16">
+    <div id="aboutme" className="bg-gray-50 py-16 px-4 md:px-16 overflow-hidden">
       <div className="container mx-auto">
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
         >
-          <motion.div 
-            variants={imageVariants} 
-            whileHover="hover"
-            className="overflow-hidden rounded-lg"
-          >
-            <img 
-              src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
-              alt="Laboratory Equipment" 
-              className="w-full h-64 object-cover grayscale"
-            />
-          </motion.div>
-          <motion.div 
-            variants={imageVariants} 
-            whileHover="hover"
-            className="overflow-hidden rounded-lg"
-          >
-            <img 
-              src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
-              alt="Quality Control Testing" 
-              className="w-full h-64 object-cover grayscale"
-            />
-          </motion.div>
-          <motion.div 
-            variants={imageVariants} 
-            whileHover="hover"
-            className="overflow-hidden rounded-lg"
-          >
-            <img 
-              src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
-              alt="Chemical Analysis" 
-              className="w-full h-64 object-cover grayscale"
-            />
-          </motion.div>
+          {[
+            "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69",
+            "https://images.unsplash.com/photo-1581093588401-fbb62a02f120",
+            "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5"
+          ].map((src, index) => (
+            <motion.div 
+              key={index}
+              variants={imageVariants} 
+              whileHover="hover"
+              className="overflow-hidden rounded-xl shadow-lg group relative"
+            >
+              <motion.div
+                className="absolute inset-0 bg-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+              />
+              <img 
+                src={`${src}?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80`}
+                alt={["Laboratory Equipment", "Quality Control Testing", "Chemical Analysis"][index]}
+                className="w-full h-64 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+              />
+            </motion.div>
+          ))}
         </motion.div>
         
         <motion.div 
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
-          className="text-center mb-12"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-center mb-16"
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-white text-4xl md:text-5xl font-bold mb-4 relative inline-block"
+            className="text-gray-900 text-4xl md:text-5xl font-bold mb-4 relative inline-block"
           >
             About Me
-            <span className="block w-full h-1 bg-white mt-4"></span>
+            <motion.span 
+              className="block w-full h-1 bg-purple-600 mt-4"
+              initial={{ width: 0 }}
+              whileInView={{ width: '100%' }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            />
           </motion.h2>
         </motion.div>
         
@@ -105,17 +109,25 @@ const AboutMe = () => {
           <motion.div 
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h3 
               variants={itemVariants}
-              className="text-white text-2xl font-bold mb-6"
+              className="text-gray-900 text-2xl font-bold mb-6 relative inline-block"
             >
               Professional Experience
+              <motion.span 
+                className="block w-3/4 h-0.5 bg-purple-600/60 mt-2"
+                initial={{ width: 0 }}
+                whileInView={{ width: '75%' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              />
             </motion.h3>
-            <motion.div variants={itemVariants} className="space-y-4 text-gray-300">
+            <motion.div variants={itemVariants} className="space-y-4 text-gray-600">
               <p>
-                <strong className="text-purple-400">Quality Control Assistant</strong> at Berger Jenson and Nicholson (Nepal) Pvt. Ltd.
+                <strong className="text-purple-600">Quality Control Assistant</strong> at Berger Jenson and Nicholson (Nepal) Pvt. Ltd.
               </p>
               <ul className="list-disc pl-5 space-y-2">
                 <li>Provided training and mentorship to over 75 workers and co-workers, enhancing team competency, standard compliance, and operational efficiency.</li>
@@ -125,7 +137,7 @@ const AboutMe = () => {
                 <li>Ensured compliance with GLP and cGMP standards, promoting a culture of safety, quality, and consistency in laboratory operations.</li>
               </ul>
               <p className="mt-4">
-                <strong className="text-purple-400">Science Teacher</strong> at Hardik Academy (Jan 2013 – 2017)
+                <strong className="text-purple-600">Science Teacher</strong> at Hardik Academy (Jan 2013 – 2017)
               </p>
               <ul className="list-disc pl-5 space-y-2">
                 <li>Taught Science to grades 6-10, adhering to the CDC curriculum.</li>
@@ -139,18 +151,26 @@ const AboutMe = () => {
           <motion.div 
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h3 
               variants={itemVariants}
-              className="text-white text-2xl font-bold mb-6"
+              className="text-gray-900 text-2xl font-bold mb-6 relative inline-block"
             >
               Achievements & Skills
+              <motion.span 
+                className="block w-3/4 h-0.5 bg-purple-600/60 mt-2"
+                initial={{ width: 0 }}
+                whileInView={{ width: '75%' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              />
             </motion.h3>
-            <motion.div variants={itemVariants} className="space-y-6">
+            <motion.div variants={itemVariants} className="space-y-8">
               <div>
-                <h4 className="text-purple-400 text-xl mb-3">Key Achievements</h4>
-                <ul className="list-disc pl-5 space-y-2 text-gray-300">
+                <h4 className="text-purple-600 text-xl mb-4">Key Achievements</h4>
+                <ul className="list-disc pl-5 space-y-3 text-gray-600">
                   <li>Streamlined laboratory process, reducing testing time by 15%</li>
                   <li>Successfully trained 75+ workers on product quality guidelines and safety standards</li>
                   <li>Achieved 100% compliance during internal audit of laboratory practices</li>
@@ -159,26 +179,28 @@ const AboutMe = () => {
               </div>
               
               <div>
-                <h4 className="text-purple-400 text-xl mb-3">Technical Skills</h4>
-                <div className="grid grid-cols-2 gap-2 text-gray-300">
-                  <div className="bg-[#252525] p-3 rounded">
-                    <span>Viscosity Testing</span>
-                  </div>
-                  <div className="bg-[#252525] p-3 rounded">
-                    <span>Gloss Measurement</span>
-                  </div>
-                  <div className="bg-[#252525] p-3 rounded">
-                    <span>Adhesion Testing</span>
-                  </div>
-                  <div className="bg-[#252525] p-3 rounded">
-                    <span>Salt Spray Tests</span>
-                  </div>
-                  <div className="bg-[#252525] p-3 rounded">
-                    <span>pH Analysis</span>
-                  </div>
-                  <div className="bg-[#252525] p-3 rounded">
-                    <span>Titration</span>
-                  </div>
+                <h4 className="text-purple-600 text-xl mb-4">Technical Skills</h4>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    "Viscosity Testing",
+                    "Gloss Measurement",
+                    "Adhesion Testing",
+                    "Salt Spray Tests",
+                    "pH Analysis",
+                    "Titration"
+                  ].map((skill, index) => (
+                    <motion.div 
+                      key={index}
+                      className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group"
+                      whileHover={{ 
+                        y: -5, 
+                        scale: 1.02,
+                        transition: { duration: 0.2 } 
+                      }}
+                    >
+                      <span className="text-gray-700 group-hover:text-purple-600 transition-colors duration-300">{skill}</span>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </motion.div>
