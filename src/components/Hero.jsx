@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="min-h-[calc(100vh-82px)] bg-[#1a1a1a] flex md:mt-[82px] mt-[66px]">
+    <div className=" bg-[#1a1a1a] flex md:mt-[82px] mt-[66px]">
       {/* Mobile First Design */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="md:hidden relative h-[60vh] w-full overflow-hidden"
+        className="md:hidden relative h-full w-full overflow-hidden"
       >
         <div className="absolute inset-0 bg-black/40 z-10" />
         <img
@@ -43,7 +43,13 @@ const Hero = () => {
           </motion.div>
         </div>
       </motion.div>
-      <div className="hidden md:flex w-full">
+
+
+
+
+
+
+      <div className="min-h-[calc(100vh-82px)] hidden md:flex w-full">
         {/* Left Side - Image */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
