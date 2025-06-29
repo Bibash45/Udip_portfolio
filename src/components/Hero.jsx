@@ -13,14 +13,14 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="md:hidden relative h-[calc(100vh-66px)] w-full overflow-hidden"
+        className="md:hidden relative h-[calc(100vh-250px)] w-full overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent z-10" />
 
         <img
           src={udip}
           alt="Profile"
-          className="w-full h-full object-contain"
+          className="absolute w-full h-full object-contain object-bottom"
         />
 
         <div className="absolute bottom-12 left-6 right-6 z-20 space-y-6">
