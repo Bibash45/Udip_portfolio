@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import lapImage1 from '../assets/lapImage1.jpg'
 
 const Introduction = () => {
   const containerVariants = {
@@ -123,7 +124,7 @@ const Introduction = () => {
                 whileHover={{ opacity: 1 }}
               />
               <img 
-                src="https://t4.ftcdn.net/jpg/14/34/10/91/360_F_1434109167_YZU0LngAg7zKtaEgE0BBTnRzSShV52Qm.jpg" 
+                src={lapImage1} 
                 alt="Laboratory Equipment" 
                 className="w-full h-auto object-cover rounded-xl hover:grayscale-0 grayscale transition-all duration-500"
               />
